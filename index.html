@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaMU Guild Tracker - Live Data</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Librería para escanear el Código QR real -->
+    <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>MegaMU Guild Tracker</h1>
+            <button id="btn-scan" onclick="toggleScanner()">Escanear QR de Cuenta</button>
+        </header>
+
+        <!-- Contenedor del Escáner QR -->
+        <div id="qr-reader-container" style="display: none;">
+            <div id="reader"></div>
+            <button onclick="toggleScanner()">Cerrar Cámara</button>
+        </div>
+
+        <!-- Panel de Estado y Token Vinculado -->
+        <section id="auth-status">
+            <h3>Estado de Vinculación</h3>
+            <p id="token-info">Ninguna cuenta vinculada. Escanea el código QR de tu panel de MegaMU.</p>
+        </section>
+
+        <!-- Listado de Personajes Obtenidos -->
+        <section id="characters-list">
+            <h2>Personajes de la Cuenta</h2>
+            <div id="chars-container">
+                <!-- Se llenará dinámicamente con JS -->
+                <div class="char-card empty">
+                    <p>Esperando conexión de la cuenta...</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
